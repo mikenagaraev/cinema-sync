@@ -1,1 +1,2 @@
-# awesome-cinema-viewer
+# CinemaSync
+Service for synchronized watching videos with your friends.
