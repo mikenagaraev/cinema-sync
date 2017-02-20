@@ -1,0 +1,17 @@
+<div class="form-group">
+  <%= form_for @room, url: {:action => :create} do |f| %>
+      <p>
+        <%= f.label "Title" %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.label "Youtube URL" %>
+        <%= f.text_field :video_url, class: 'form-control' %>
+      </p>
+
+      <div class="btn-group" role="group">
+        <%= f.submit class: 'btn btn-success', id: "submit" %>
+      </div>
+  <% end %>
+</div>
