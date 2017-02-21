@@ -1,0 +1,64 @@
+$header-height: 70px;
+$awesome-first-color: #d4fd02;
+$awesome-second-color: #01b7ee;
+$site-back-color: #000;
+$header-border-bottom-color: #ffffff;
+$rooms-block-border-color: #ffffff;
+@import url( 'https://fonts.googleapis.com/css?family=Arizonia');
+
+body {
+  background: $site-back-color !important;
+  height: 100%;
+  font-size: 10px;
+}
+
+.header {
+  height: $header-height;
+  border-bottom: 2px solid $header-border-bottom-color;
+
+  .logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20rem;
+    cursor: pointer;
+
+    &-text {
+      margin: 0;
+
+      &:hover a {
+        color: lighten($awesome-first-color, 20%);
+      }
+
+      a {
+        font-family: Arizonia;
+        font-size: 4rem;
+        color: $awesome-first-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .authorization {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10rem;
+
+    &-text {
+      margin-left: 2rem;
+      font-size: 2rem;
+      text-decoration: none;
+      color: #ffffff;
+
+      &:hover {
+        color: $awesome-second-color;
+      }
+    }
+  }
+}
+
+.rooms-block {
+  height: 50rem;
+  overflow-y: auto;
+}
