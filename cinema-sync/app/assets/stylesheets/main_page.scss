@@ -1,7 +1,7 @@
 $header-height: 70px;
 $awesome-first-color: #d4fd02;
 $awesome-second-color: #01b7ee;
-$site-back-color: #000;
+$site-back-color: lighten(#000,20%);
 $header-border-bottom-color: #ffffff;
 $rooms-block-border-color: #ffffff;
 @import url( 'https://fonts.googleapis.com/css?family=Arizonia');
@@ -15,6 +15,10 @@ body {
 .header {
   height: $header-height;
   border-bottom: 2px solid $header-border-bottom-color;
+  border-top: 2px solid $header-border-bottom-color;
+  position: relative;
+  margin-top: 4rem;
+  background: rgba(0,0,0,.2);
 
   .logo {
     position: relative;
@@ -38,27 +42,91 @@ body {
       }
     }
   }
+  $button-create-height: 3.5rem;
 
-  .authorization {
+  .create-room-button {
+    outline: none;
+    border: none;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: $awesome-second-color;
+    position: absolute;
+    bottom: -$button-create-height - 0.1rem;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 20rem;
+    height: 3.5rem;
+    font-size: 2.4rem;
+    color: #ffffff;
+    text-align: center;
+    line-height: $button-create-height;
+
+    &:hover {
+      background: lighten($awesome-second-color,5%);
+    }
+  }
+
+  .site-navigation {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     right: 10rem;
 
-    &-text {
-      margin-left: 2rem;
-      font-size: 2rem;
-      text-decoration: none;
-      color: #ffffff;
+    &-list {
+      padding: 0;
+      list-style: none;
 
-      &:hover {
-        color: $awesome-second-color;
+      &-item {
+        display: inline-block;
+        margin-left: 2rem;
+
+        .site-navigation-text {
+          font-size: 2rem;
+          text-decoration: none;
+          color: #ffffff;
+
+          &:hover {
+            color: $awesome-second-color;
+          }
+        }
       }
     }
   }
 }
 
-.rooms-block {
-  height: 50rem;
+.main-content {
+  background: rgba(0,0,0,.2);
+  margin-top: 10rem;
+  min-height: 100rem;
+
+  &-header {
+    &-title {
+      font-size: 2rem;
+      color: $awesome-first-color;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.rooms-container {
+  padding-left: 0 !important;
+  height: 100rem;
   overflow-y: auto;
+
+  &-item {
+    margin-top: 4rem;
+    cursor: pointer;
+
+    &:hover {}
+
+    &-body {
+      height: 40rem;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }

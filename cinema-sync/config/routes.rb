@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'home/about', to: "home#about", as: 'about'
+
   resources :users do
     resource :room
   end
