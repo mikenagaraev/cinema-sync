@@ -4,21 +4,31 @@ $awesome-second-color: #01b7ee;
 $site-back-color: lighten(#000,20%);
 $header-border-bottom-color: #ffffff;
 $rooms-block-border-color: #ffffff;
-@import url( 'https://fonts.googleapis.com/css?family=Arizonia');
+@import url( 'https://fonts.googleapis.com/css?family=Arizonia|Maven+Pro');
+
+html {
+  min-height: 100%;
+  background: url('image.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
 
 body {
-  background: $site-back-color !important;
+  background: transparent !important;
   height: 100%;
   font-size: 10px;
+  overflow-y: scroll;
 }
 
 .header {
   height: $header-height;
-  border-bottom: 2px solid $header-border-bottom-color;
-  border-top: 2px solid $header-border-bottom-color;
+  // border-bottom: 3px solid $header-border-bottom-color;
+  // border-top: 3px solid $header-border-bottom-color;
   position: relative;
   margin-top: 4rem;
-  background: rgba(0,0,0,.2);
+  background: rgba(0,0,0,.6);
 
   .logo {
     position: relative;
@@ -60,6 +70,11 @@ body {
     color: #ffffff;
     text-align: center;
     line-height: $button-create-height;
+    font-family: Maven Pro;
+
+    span {
+      font-size: 2rem;
+    }
 
     &:hover {
       background: lighten($awesome-second-color,5%);
@@ -70,7 +85,9 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    right: 10rem;
+    height: 4rem;
+    line-height: 4rem;
+    right: 15rem;
 
     &-list {
       padding: 0;
@@ -81,9 +98,10 @@ body {
         margin-left: 2rem;
 
         .site-navigation-text {
-          font-size: 2rem;
+          font-size: 2.5rem;
           text-decoration: none;
           color: #ffffff;
+          font-family: Maven Pro;
 
           &:hover {
             color: $awesome-second-color;
@@ -95,23 +113,29 @@ body {
 }
 
 .main-content {
-  background: rgba(0,0,0,.2);
+  background: rgba(0,0,0,.6);
   margin-top: 10rem;
-  min-height: 100rem;
+  padding-bottom: 2rem;
 
   &-header {
     &-title {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Maven Pro;
       color: $awesome-first-color;
       text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
 .rooms-container {
   padding-left: 0 !important;
-  height: 100rem;
-  overflow-y: auto;
+  height: 100%;
 
   &-item {
     margin-top: 4rem;
@@ -120,6 +144,7 @@ body {
     &:hover {}
 
     &-body {
+      border: 2px solid $awesome-first-color;
       height: 40rem;
       height: 100%;
 
