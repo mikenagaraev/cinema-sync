@@ -2,20 +2,21 @@
 <div id="create-room-pop-up" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form action="<%= create_room_path(current_user)%>" method="post" class="form-group">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2>New Room</h2>
+      <form action="<%= create_room_path(current_user)%>" method="post" class="form-group" remote="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2>New Room</h2>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper-input">
+
+          <input type="text" placeholder="Name..." room-info="title" class="form-control">
         </div>
-        <div class="modal-body">
-          <div class="wrapper-input">
-            <input type="text" placeholder="Name..." room-info="title" class="form-control">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" data-controller="<%= create_room_path(current_user) %>" id="create-room-button">Create</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" remote="true" data-controller="<%= create_room_path(current_user) %>" id="create-room-button">Create</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
       </form>
     </div>
   </div>

@@ -25,7 +25,6 @@ $(document).on('turbolinks:load', function() {
   function createRoom(data) {
     var sendable = getRoomObject(data);
     var controller = $('#create-room-button').attr('data-controller');
-    console.log(sendable, controller)
     throughAJAX(sendable, controller, "POST", function() {
       popupMessage('success', 'Room is created');
     });

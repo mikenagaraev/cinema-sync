@@ -1,0 +1,15 @@
+<div class="col-md-4 rooms-container-item">
+  <div class="rooms-container-item-body">
+    <a href="<%= user_room_path(current_user, room) %>">
+      <div class="img-preview">
+        <%= image_tag 'default-item.png', class: 'img-responsive' %>
+        <div class="triangle-preview"></div>
+      </div>
+    </a>
+    <div class="rooms-container-item-body-title">
+      <h2>
+        <a href="<%= user_room_path(current_user, room) %>"><%= room.title %></a>
+      </h2>
+    </div>
+  </div>
+</div>

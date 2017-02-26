@@ -12,7 +12,11 @@ class RoomsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @user.rooms.create(room_params)
+    @room = @user.rooms.create(room_params)
+    respond_to do |format|
+      format.js
+    end
+    redirect_to user_room_path(@user, @room)
   end
 
   def show

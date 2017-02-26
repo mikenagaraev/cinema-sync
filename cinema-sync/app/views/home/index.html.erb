@@ -1,2 +1,7 @@
 <%= render 'main_content' %>
 <%= render 'footer' %>
+<% if current_user %>
+<button class="button-create" data-toggle="modal" data-target="#create-room-pop-up">
+  <span class="glyphicon glyphicon-plus"></span>
+</button>
+<% end %>
