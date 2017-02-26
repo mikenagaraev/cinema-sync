@@ -1,7 +1,7 @@
-<h1><%= @room.title %></h1> <br/>
-<h3><%= VideoInfo.new(@room.video_url).embed_code.html_safe %></h3>
+<h1><%= @room.title %></h1>
+<br/>
 <% if @room.user == current_user %>
-    <%= button_to "Delete room", user_room_path, method: :delete,
+<%= button_to "Delete room", user_room_path, method: :delete,
                   class: "btn btn-danger",
                   id: "delete_btn" %>
 <% end %>

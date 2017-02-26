@@ -1,5 +1,8 @@
 <div class="col-md-4 rooms-container-item">
   <div class="rooms-container-item-body">
     <%= image_tag 'default-item.png', class: 'img-responsive' %>
+    <h2>
+      <a href="<%= user_room_path(current_user, room) %>"><%= room.title %></a>
+    </h2>
   </div>
 </div>

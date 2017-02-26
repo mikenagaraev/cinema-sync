@@ -8,10 +8,12 @@
           <h2>New Room</h2>
         </div>
         <div class="modal-body">
-          <input type="text" placeholder="Name..." class="form-control">
+          <div class="wrapper-input">
+            <input type="text" placeholder="Name..." room-info="title" class="form-control">
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Create</button>
+          <button type="submit" class="btn btn-primary" data-controller="<%= create_room_path(current_user) %>" id="create-room-button">Create</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </form>

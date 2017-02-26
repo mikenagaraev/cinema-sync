@@ -1,28 +1,5 @@
 <div class="container rooms-container">
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
-  <%= render 'room' %>
+  <% @rooms.all.each do |room| %>
+    <%= render 'room', room: room %>
+  <% end %>
 </div>
