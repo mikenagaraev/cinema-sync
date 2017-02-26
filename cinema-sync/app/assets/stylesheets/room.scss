@@ -1,0 +1,115 @@
+$chat-header-color: #01b7ee;
+$chat-body-color: #ffffff;
+$chat-header-height: 10rem;
+$room-body-height: 90rem;
+$chat-height: 90rem;
+$video-block-header-height: 5rem;
+$video-height: 60rem;
+$options-height: 20rem;
+$room-page-header-height: 10rem;
+
+.room-page {
+  box-sizing: border-box;
+  padding: 5rem 10rem !important;
+
+  &-header {
+    text-align: center;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-family: Maven Pro;
+    height: $room-page-header-height;
+    margin-top: 2rem;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  &-body {
+    height: calc(100% - $room-page-header-height);
+
+    &-video-block {
+      height: 70%;
+
+      &-header {
+        height: $video-block-header-height;
+        color: #ffffff;
+        text-align: left;
+        font-size: 3rem;
+      }
+
+      &-video {
+        height: $video-height;
+      }
+    }
+
+    &-options {
+      margin-top: 5rem;
+      width: 100%;
+      height: $options-height;
+      background: rgba(0,0,0,.7);
+
+      .option-button {
+        display: inline-block;
+        position: relative;
+        top: 2rem;
+        left: 3rem;
+        width: 16rem;
+        height: 4rem;
+        line-height: 4rem;
+        color: #ffffff;
+        font-size: 2.5rem;
+        text-align: center;
+        text-decoration: none;
+      }
+      $edit-room-button-color: #01b7ee;
+
+      .edit-room-button {
+        background: $edit-room-button-color;
+
+        &:hover {
+          background: darken($edit-room-button-color,3%);
+        }
+      }
+      $delete-room-button-color: #ff0000;
+
+      .delete-room-button {
+        margin-left: 2rem;
+        background: $delete-room-button-color;
+
+        &:hover {
+          background: darken($delete-room-button-color,3%);
+        }
+      }
+    }
+
+    &-chat {
+      height: 100%;
+
+      &-header {
+        text-align: center;
+        height: $chat-header-height;
+        width: 100%;
+        font-family: Maven Pro;
+        background: $chat-header-color;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        color: #ffffff;
+        border-bottom: 2px solid #000;
+
+        h2 {
+          position: relative;
+          margin: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 3rem;
+        }
+      }
+
+      &-body {
+        height: $chat-height - $chat-header-height;
+        background: $chat-body-color;
+      }
+    }
+  }
+}

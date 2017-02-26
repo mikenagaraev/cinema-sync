@@ -1,0 +1,5 @@
+<div class="container rooms-container">
+  <% @rooms.all.each do |room| %>
+    <%= render 'rooms/room', room: room %>
+  <% end %>
+</div>

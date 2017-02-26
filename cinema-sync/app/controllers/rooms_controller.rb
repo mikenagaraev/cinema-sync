@@ -2,32 +2,29 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.all
   end
-  
+
   def new
     @room = Room.new
   end
 
   def create
-    set_user
-    @user.create_room(room_params)
-    redirect_to user_room_path
+    current_user.rooms.create(room_params)
   end
 
   def show
-    set_user
-    @room = @user.room
+    set_room
   end
 
   def destroy
-    set_user
-    @room = @user.room
+    set_room
     @room.destroy
     redirect_to root_path
   end
 
   private
-  def set_user
-    @user = User.find(params[:user_id])
+
+  def set_room
+    @room = Room.find(params[:id])
   end
 
   def room_params

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :users do
-    resource :room
-  end
+  get 'home/about', to: "home#about", as: 'about'
+
+  resources :users
+  resources :rooms, only: [:create, :new, :show, :patch, :destroy]
 end

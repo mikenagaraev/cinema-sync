@@ -1,0 +1,187 @@
+$header-height: 70px;
+$awesome-first-color: #d4fd02;
+$awesome-second-color: #01b7ee;
+$site-back-color: lighten(#000,20%);
+$header-border-bottom-color: #ffffff;
+$rooms-block-border-color: #ffffff;
+@import url( 'https://fonts.googleapis.com/css?family=Arizonia|Maven+Pro');
+
+html {
+  min-height: 100%;
+  background: url('image.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
+}
+
+body {
+  background: transparent !important;
+  height: 100%;
+  font-size: 10px;
+  overflow-y: scroll;
+}
+
+.header {
+  height: $header-height;
+  position: relative;
+  margin-top: 4rem;
+  background: rgba(0,0,0,.6);
+
+  .logo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20rem;
+    cursor: pointer;
+
+    &-text {
+      margin: 0;
+
+      &:hover a {
+        color: lighten($awesome-first-color, 20%);
+      }
+
+      a {
+        font-family: Arizonia;
+        font-size: 4rem;
+        color: $awesome-first-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .site-navigation {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4rem;
+    line-height: 4rem;
+    right: 15rem;
+
+    &-list {
+      padding: 0;
+      list-style: none;
+
+      &-item {
+        display: inline-block;
+        margin-left: 2rem;
+
+        .site-navigation-text {
+          font-size: 2.5rem;
+          text-decoration: none;
+          color: #ffffff;
+          font-family: Maven Pro;
+
+          &:hover {
+            color: $awesome-second-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  background: rgba(0,0,0,.6);
+  margin-top: 5rem;
+  padding-bottom: 2rem;
+
+  &-header {
+    &-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Maven Pro;
+      color: $awesome-first-color;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+$button-create-size: 8rem;
+
+.button-create {
+  outline: none;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: $awesome-second-color;
+  position: fixed;
+  right: 7rem;
+  bottom: 5rem;
+  width: $button-create-size;
+  height: $button-create-size;
+  color: #ffffff;
+  line-height: $button-create-size;
+  font-family: Maven Pro;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0 .5rem #ffffff;
+    background: lighten($awesome-second-color,5%);
+  }
+}
+
+.rooms-container {
+  padding-left: 0 !important;
+  height: 100%;
+
+  &-item {
+    margin-top: 4rem;
+    cursor: pointer;
+
+    &:hover {}
+
+    &-body {
+      border: 2px solid $awesome-first-color;
+      height: 40rem;
+      height: 100%;
+
+      &-title {
+        text-align: center;
+
+        a {
+          color: #ffffff;
+
+          &:hover {
+            color: #ffffff;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .img-preview {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.5s;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+
+        .triangle-preview {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+  }
+}

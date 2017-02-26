@@ -1,0 +1,23 @@
+<% if current_user %>
+<div id="create-room-pop-up" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="<%= rooms_path %>" method="post" class="form-group" remote="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2>New Room</h2>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper-input">
+            <input type="text" placeholder="Name..." room-info="title" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" remote="true" data-controller="<%= rooms_path %>" id="create-room-button">Create</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>

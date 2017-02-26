@@ -1,0 +1,54 @@
+.alert-message {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0 3px 5px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  min-width: 20rem;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 999;
+  font-size: 1.5rem;
+
+  &-warning {
+    color: #fff;
+    background-color: #ff0000;
+    border: 1px solid #222;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      z-index: 2;
+      left: 50%;
+      transform: translate(-50%);
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 8px solid #ff0000;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      z-index: 1;
+      left: 50%;
+      transform: translate(-50%);
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 8px solid #222;
+    }
+  }
+
+  &-danger {
+    border: 1px solid #c9302c;
+    background: #ffffff;
+  }
+}
