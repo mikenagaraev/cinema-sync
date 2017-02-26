@@ -1,12 +1,3 @@
-<!-- <h1><%= @room.title %></h1>
-<br/>
-<% if @room.user == current_user %>
-<%= button_to "Delete room", user_room_path, method: :delete,
-                  class: "btn btn-danger",
-                  id: "delete_btn" %>
-<% end %> -->
-
-
 <div class="container-fluid room-page">
   <div class="room-page-header">
     <h2><%= @room.title %></h2>
@@ -18,18 +9,17 @@
           Some title of Film
         </div>
         <div class="room-page-body-video-block-video">
-          <iframe src="x" frameborder="0" width="100%" height="100%"></iframe>
+          <iframe src="https://www.youtube.com/embed/Tp0GTdXwxMw" allowfullscreen frameborder="0" width="100%" height="100%"></iframe>
         </div>
       </div>
       <div class="room-page-body-options">
         <% if @room.user == current_user %>
-          <div class="admin-options">
-            <a href="#" class="edit-room-button option-button">Edit</a>
-            <%= link_to "Delete", user_room_path(current_user, @room),  method: :delete, class: "delete-room-button option-button" %>
-          </div>
-        <% end %>
-        <div class="user-options">
+        <div class="admin-options">
+          <a href="#" class="edit-room-button option-button">Edit</a>
+          <%= link_to "Delete", user_room_path(current_user, @room),  method: :delete, class: "delete-room-button option-button" %>
         </div>
+        <% end %>
+        <div class="user-options"></div>
       </div>
     </div>
     <div class="col-md-4">

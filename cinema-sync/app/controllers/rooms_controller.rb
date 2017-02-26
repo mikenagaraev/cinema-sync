@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_user, except: [:new, :index, :create]
-  before_action :set_room, except: [:new, :index, :create]
+  before_action :set_user_and_room, except: [:new, :index, :create]
 
   def index
     @rooms = Room.all
@@ -13,9 +12,6 @@ class RoomsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @room = @user.rooms.create(room_params)
-    respond_to do |format|
-      format.js
-    end
     redirect_to user_room_path(@user, @room)
   end
 
@@ -29,11 +25,8 @@ class RoomsController < ApplicationController
 
   private
 
-  def set_user
+  def set_user_and_room
     @user = User.includes(:rooms).find(params[:user_id])
-  end
-
-  def set_room
     @room = @user.rooms.find(params[:id])
   end
 
