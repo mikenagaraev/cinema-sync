@@ -16,7 +16,7 @@
         <% if @room.user == current_user %>
         <div class="admin-options">
           <a href="#" class="edit-room-button option-button">Edit</a>
-          <%= link_to "Delete", user_room_path(current_user, @room),  method: :delete, class: "delete-room-button option-button" %>
+          <%= link_to "Delete", room_path(@room),  method: :delete, class: "delete-room-button option-button" %>
         </div>
         <% end %>
         <div class="user-options"></div>

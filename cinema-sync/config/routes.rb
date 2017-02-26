@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get 'home/about', to: "home#about", as: 'about'
 
-  resources :users do
-    resources :rooms, only: [:new, :show, :patch, :destroy]
-  end
-  post 'users/:user_id/room', to: "rooms#create", as: "create_room"
+  resources :users
+  resources :rooms, only: [:create, :new, :show, :patch, :destroy]
 end
