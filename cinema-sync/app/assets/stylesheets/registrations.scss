@@ -1,0 +1,71 @@
+$registration-button-acrive: #18b087;
+$registration-button-nonactive: #848d96;
+$registration-background: #848d96;
+
+.container {
+	max-width: 400px;
+	margin: 30px auto auto;
+	border-radius: 15px;
+	background-color: rgba(36, 48, 60, 0.7);
+}
+
+button {
+	min-width: 180px;
+	height: 40px;
+	background-color: #848d96;
+	border: none;
+	margin-top: 30px;
+	float: left;
+}
+
+.buttons {
+	margin-top: 20px;
+	margin-left: 5px;
+	overflow: hidden;
+	color: #fff;
+	font-family: Maven Pro;
+	font-size: 18px;
+}
+
+.signup {
+	background-color: #18b087;
+}
+
+.form-name {
+	font-size: 28px;
+	font-family: Maven Pro;
+	font-weight: normal;
+	color: #FFF;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.field {
+	color: #848d96;
+	width: 200px;
+	margin: 20px 5px;
+	
+}  
+
+.field input{
+	background-color: #24303c;
+	border: 1px solid #848d96;
+	height: 40px;
+	padding: 5px 10px;
+	width: 360px;
+}
+
+.submit-button {
+	background-color: #18b087;
+	width: 360px;
+	height: 60px;
+	border: none;
+	margin-top: 10px;
+	margin-left: 5px;
+	font-size: 23px;
+	color: #fff;
+	margin: 15px 5px;
+	font-family: Maven Pro;
+}
+
+
