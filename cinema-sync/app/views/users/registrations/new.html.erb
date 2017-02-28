@@ -1,7 +1,7 @@
-<div class="container">
+<div class="registration-container">
  <div class="buttons">
-      <button class="signup">Sign up</button>
-      <button class="login">Log in</button>
+      <button class="signup"><%= link_to "Sign Up", new_user_registration_path, :class => "registration-button" %></button>
+      <button class="login"><%= link_to "Log in", new_user_session_path, :class => "registration-button" %></button>
  </div>
 
 <div class="form-name">Sign Up</div>

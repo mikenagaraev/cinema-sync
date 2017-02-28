@@ -1,0 +1,22 @@
+.about-container {
+	margin: 0 auto;
+	width: 1000px;
+	background-color: rgba(36, 48, 60, 0.7);
+	max-height: 100%;
+	border-radius: 30px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.about-container>h1 {
+	font-size: 50px;
+	text-decoration: underline;
+	font-family: Maven Pro;
+	color: #18b087;
+}
+
+span {
+	font-size: 30px;
+	font-family: serif;
+	color: #fff;
+}

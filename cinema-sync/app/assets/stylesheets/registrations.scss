@@ -2,11 +2,13 @@ $registration-button-acrive: #18b087;
 $registration-button-nonactive: #848d96;
 $registration-background: #848d96;
 
-.container {
+.registration-container {
 	max-width: 400px;
 	margin: 30px auto auto;
 	border-radius: 15px;
 	background-color: rgba(36, 48, 60, 0.7);
+	padding-top: 10px;
+	padding-left: 15px;
 }
 
 button {
@@ -16,7 +18,10 @@ button {
 	border: none;
 	margin-top: 30px;
 	float: left;
+	color: #fff;
 }
+
+
 
 .buttons {
 	margin-top: 20px;
@@ -27,9 +32,15 @@ button {
 	font-size: 18px;
 }
 
-.signup {
-	background-color: #18b087;
+.registration-button {
+	color: #fff;
 }
+
+.registration-button:hover{
+	font-size: 22px;
+	color: #fff;
+}
+
 
 .form-name {
 	font-size: 28px;
@@ -68,4 +79,7 @@ button {
 	font-family: Maven Pro;
 }
 
+.submit-button:hover {
+	font-size: 27px;
+}
 

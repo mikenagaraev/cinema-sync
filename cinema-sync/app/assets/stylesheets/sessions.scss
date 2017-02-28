@@ -1,0 +1,13 @@
+.session-container {
+	max-width: 400px;
+	margin: 30px auto auto;
+	border-radius: 15px;
+	background-color: rgba(36, 48, 60, 0.7);
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+
+.login:focus {
+	background-color: #18b087;
+}
