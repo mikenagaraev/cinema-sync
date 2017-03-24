@@ -40,6 +40,34 @@ $room-page-header-height: 10rem;
 
       &-video {
         height: $video-height;
+
+        .add-video-area {
+          height: 100%;
+          width: 100%;
+          border: 0.3rem dashed #ffffff;
+          background: rgba(0,0,0,.7);
+          position: relative;
+
+          &-target {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 10%;
+            height: $video-height / 6;
+            border: 0.3rem dashed #ffffff;
+            cursor: pointer;
+
+            span {
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              position: absolute;
+              font-size: 4rem;
+              color: #ffffff;
+            }
+          }
+        }
       }
     }
 

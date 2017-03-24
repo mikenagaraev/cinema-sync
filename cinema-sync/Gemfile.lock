@@ -99,6 +99,7 @@ GEM
     oga (2.9)
       ast
       ruby-ll (~> 2.1)
+    openssl (2.0.3)
     orm_adapter (0.5.0)
     pg (0.19.0)
     puma (3.7.0)
@@ -192,6 +193,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  openssl
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.1)
@@ -205,4 +207,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.4
+   1.14.6

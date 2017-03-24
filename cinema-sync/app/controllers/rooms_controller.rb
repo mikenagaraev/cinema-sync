@@ -15,6 +15,15 @@ class RoomsController < ApplicationController
     set_room
   end
 
+  def update
+    set_room
+    @room.update_attributes(room_params)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def destroy
     set_room
     @room.destroy
@@ -28,6 +37,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:user_id, :title, :video_url)
+    params.require(:room).permit(:user_id, :title, :video_url, :video_title)
   end
 end

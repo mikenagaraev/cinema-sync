@@ -6,10 +6,19 @@
     <div class="col-md-8">
       <div class="room-page-body-video-block">
         <div class="room-page-body-video-block-header">
-          Some title of Film
+          <%= @room.video_title if @room.video_title  %>
         </div>
         <div class="room-page-body-video-block-video">
-          <iframe src="https://www.youtube.com/embed/Tp0GTdXwxMw" allowfullscreen frameborder="0" width="100%" height="100%"></iframe>
+          <% if @room.video_url %>
+            <iframe src="<%= @room.video_url %>" allowfullscreen frameborder="0" width="100%" height="100%"></iframe>
+          <% else %>
+            <div class="add-video-area">
+              <div class="add-video-area-target" data-toggle="modal" data-target="#add-video-pop-up">
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </div>
+          <% end %>
+          <!-- <iframe src="https://www.youtube.com/embed/Tp0GTdXwxMw" allowfullscreen frameborder="0" width="100%" height="100%"></iframe> -->
         </div>
       </div>
       <div class="room-page-body-options">
@@ -32,3 +41,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'add_video_pop_up' %>
