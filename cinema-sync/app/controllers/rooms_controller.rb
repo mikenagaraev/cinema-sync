@@ -19,14 +19,10 @@ class RoomsController < ApplicationController
     @room = @user.room
   end
 
-  #def update
-  #  set_user
-  #  @room.update_attributes(room_params)
-  #  respond_to do |format|
-  #    format.html
-  #    format.js
-  #  end
-  #end
+  def update
+    @room.update_attributes(room_params)
+    redirect_to @room
+  end
 
   def destroy
     @room.destroy
