@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :set_room, except: [:index, :new, :create]
+
   def index
     @rooms = Room.all
   end
@@ -14,7 +16,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    set_user
     @room = @user.room
   end
 
@@ -28,7 +29,6 @@ class RoomsController < ApplicationController
   #end
 
   def destroy
-    set_user
     @room.destroy
     redirect_to root_path
   end
