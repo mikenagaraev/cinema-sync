@@ -1,0 +1,42 @@
+.chat-box {
+		margin-top: 10px;
+}
+
+.username-field  {
+	color: #18b087;
+	max-width: 35px;
+	margin: 0 auto;
+	overflow: hidden;
+	font-family: Maven Pro;
+	margin-top: -5px;
+}
+
+.user-img {
+	text-align: center;
+}
+
+.user-box {
+	display: inline-block;
+	width: 40px;
+	vertical-align: middle;
+}
+
+.message-box {
+	display: inline-block;
+	width: 250px;
+	vertical-align: middle;
+
+}
+
+.message-field {
+	background-color: rgba(222,222,222, 0.6);
+	color: #48464B;
+	word-wrap: break-word;
+	min-height: 30px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	font-family: Maven Pro;
+}
+
+
+

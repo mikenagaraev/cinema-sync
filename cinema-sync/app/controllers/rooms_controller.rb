@@ -10,19 +10,23 @@ class RoomsController < ApplicationController
   end
 
   def create
-    current_user.rooms.create(room_params)
+    set_user
+    @user.create_room(room_params)
+    redirect_to user_room_path(current_user)
   end
 
   def show
+    @room = @user.room
   end
 
-  def update
-    @room.update_attributes(room_params)
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
+  #def update
+  #  set_user
+  #  @room.update_attributes(room_params)
+  #  respond_to do |format|
+  #    format.html
+  #    format.js
+  #  end
+  #end
 
   def destroy
     @room.destroy
@@ -31,8 +35,8 @@ class RoomsController < ApplicationController
 
   private
 
-  def set_room
-    @room = Room.find(params[:id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def room_params

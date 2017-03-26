@@ -57,5 +57,7 @@ end
 
 gem 'devise'
 gem 'video_info'
+gem 'private_pub'
+gem 'thin'
 
 gem 'bootstrap-sass', '~> 3.3.6'

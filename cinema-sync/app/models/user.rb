@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
   validates :username, :email, :password, :password_confirmation, :presence => true
 
-  has_many :rooms, dependent: :destroy
+  has_one :room, dependent: :destroy
+  has_many :messages, dependent: :destroy
 end
