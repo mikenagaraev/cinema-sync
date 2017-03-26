@@ -10,14 +10,13 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = current_user.rooms.create(room_params)
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    set_user
+    @user.create_room(room_params)
+    redirect_to user_room_path(current_user)
   end
 
   def show
+    @room = @user.room
   end
 
   def update
@@ -32,8 +31,8 @@ class RoomsController < ApplicationController
 
   private
 
-  def set_room
-    @room = Room.find(params[:id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def room_params

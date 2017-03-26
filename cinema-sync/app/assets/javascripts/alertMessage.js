@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   window.alertMessage = function(type, text, elements, hasWrapper, time) {
     var defaultDelayTime = 3000;
-    var message = $('<div/>').addClass('alert-message alert-message-' + type);
+    var message = $('<div/>').addClass('alert-messages alert-messages-' + type);
 
     message.text(text);
 

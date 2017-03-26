@@ -118,6 +118,9 @@ $room-page-header-height: 10rem;
         text-align: center;
         height: $chat-header-height;
         width: 100%;
+        height: 50px;
+        margin-top: 25px;
+        font-size: 2em;
         font-family: Maven Pro;
         background: $chat-header-color;
         border-top-left-radius: 1rem;
@@ -139,6 +142,13 @@ $room-page-header-height: 10rem;
         background: $chat-body-color;
       }
     }
+  }
+
+  #chat {
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 750px;
+    overflow-y: scroll;
   }
 }
 

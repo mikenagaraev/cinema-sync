@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   window.popupMessage = function(type, text) {
-    var message = $('<div/>').addClass('popup-message popup-message-' + type)
+    var message = $('<div/>').addClass('popup-messages popup-messages-' + type)
     $(message).text(text);
     $(message).append('<div class="close-popup">☓</div>');
     $('body').append(message);

@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   get 'home/about', to: "home#about", as: 'about'
 
-  resources :users
-  resources :rooms, only: [:create, :new, :show, :destroy, :edit]
-  put 'rooms/:id', to: "rooms#update", as: "update_room"
+  resources :users do
+    resource :room do
+      resources :messages
+    end
+    put 'rooms/:id', to: "rooms#update", as: "update_room"
+  end
+  
 end
