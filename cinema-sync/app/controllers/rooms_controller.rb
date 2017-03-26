@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, except: [:inext, :new, :create]
+  before_action :set_room, except: [:index, :new, :create]
 
   def index
     @rooms = Room.all
