@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     resource :room do
       resources :messages
     end
-    put 'rooms/:id', to: "rooms#update", as: "update_room"
   end
-  
+
 end

@@ -23,8 +23,8 @@
       <div class="room-page-body-options">
         <% if @room.user == current_user %>
         <div class="admin-options">
-          <%= link_to "Edit", edit_user_room_path(@room), class: "edit-room-button option-button" %>
-          <%= link_to "Delete", user_room_path(@room),  method: :delete, class: "delete-room-button option-button" %>
+          <%= link_to "Edit", edit_user_room_path(current_user), class: "edit-room-button option-button" %>
+          <%= link_to "Delete", user_room_path(current_user),  method: :delete, class: "delete-room-button option-button" %>
         </div>
         <% end %>
         <div class="user-options"></div>
@@ -50,7 +50,7 @@
             <% end %>
           </div>
         </div>
-       
+
       </div>
     </div>
   </div>

@@ -7,8 +7,10 @@ class Room < ApplicationRecord
   validates_presence_of :title
 
   def create_iframe_link
-    video_hash = self.video_url.match(YOUTUBE_VIDEO_REGEX)[3]
-    self.video_url = "https://www.youtube.com/embed/#{video_hash}"
+    if video_url
+      video_hash = video_url.match(YOUTUBE_VIDEO_REGEX)[3]
+      self.video_url = "https://www.youtube.com/embed/#{video_hash}"
+    end
   end
   has_many :messages, dependent: :destroy
 end

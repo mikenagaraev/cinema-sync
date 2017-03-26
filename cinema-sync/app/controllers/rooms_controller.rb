@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :set_user, except: [:index, :new]
   before_action :set_room, except: [:index, :new, :create]
 
   def index
@@ -10,18 +11,16 @@ class RoomsController < ApplicationController
   end
 
   def create
-    set_user
     @user.create_room(room_params)
     redirect_to user_room_path(current_user)
   end
 
   def show
-    @room = @user.room
   end
 
   def update
     @room.update_attributes(room_params)
-    redirect_to @room
+    redirect_to user_room_path
   end
 
   def destroy
@@ -33,6 +32,10 @@ class RoomsController < ApplicationController
 
   def set_user
     @user = User.find(params[:user_id])
+  end
+
+  def set_room
+    @room = @user.room
   end
 
   def room_params
