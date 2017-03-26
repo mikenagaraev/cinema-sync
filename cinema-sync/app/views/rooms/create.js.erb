@@ -1,0 +1,8 @@
+$('.rooms-container').prepend("<%= escape_javascript render @room %>")
+
+$("#create-room-pop-up").find('input').each(function(i, el) {
+  $(el).val('');
+});
+$("#create-room-pop-up").modal('toggle');
+
+popupMessage('success', 'Room is created');

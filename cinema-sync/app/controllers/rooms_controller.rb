@@ -10,7 +10,11 @@ class RoomsController < ApplicationController
   end
 
   def create
-    current_user.rooms.create(room_params)
+    @room = current_user.rooms.create(room_params)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -18,10 +22,7 @@ class RoomsController < ApplicationController
 
   def update
     @room.update_attributes(room_params)
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    redirect_to @room
   end
 
   def destroy

@@ -141,3 +141,23 @@ $room-page-header-height: 10rem;
     }
   }
 }
+
+.edit-room {
+  background: rgba(0,0,0,.6);
+  padding: 3rem !important;
+  border-radius: .6rem;
+  margin-top: 4rem;
+
+  &-form-button {
+    margin-top: 2rem;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &-label {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
