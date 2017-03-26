@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :set_room, except: [:inext, :new, :create]
+
   def index
     @rooms = Room.all
   end
@@ -12,11 +14,9 @@ class RoomsController < ApplicationController
   end
 
   def show
-    set_room
   end
 
   def update
-    set_room
     @room.update_attributes(room_params)
     respond_to do |format|
       format.html
@@ -25,7 +25,6 @@ class RoomsController < ApplicationController
   end
 
   def destroy
-    set_room
     @room.destroy
     redirect_to root_path
   end
