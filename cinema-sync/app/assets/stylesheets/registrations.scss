@@ -11,20 +11,17 @@ $registration-background: #848d96;
 	padding-left: 15px;
 }
 
-button {
+.form-button {
 	min-width: 180px;
 	height: 40px;
 	background-color: #848d96;
 	border: none;
-	margin-top: 30px;
 	float: left;
 	color: #fff;
 }
 
-
-
-.buttons {
-	margin-top: 20px;
+.form-switch-buttons {
+	margin-top: 10px;
 	margin-left: 5px;
 	overflow: hidden;
 	color: #fff;
@@ -34,13 +31,18 @@ button {
 
 .registration-button {
 	color: #fff;
+	text-decoration: none;
+}
+
+.form-button:hover{
+	text-decoration: none;
+	background-color: #18b087;
 }
 
 .registration-button:hover{
-	font-size: 22px;
+	text-decoration: none;
 	color: #fff;
 }
-
 
 .form-name {
 	font-size: 28px;
@@ -80,6 +82,6 @@ button {
 }
 
 .submit-button:hover {
-	font-size: 27px;
+	background-color: #18b068;
 }
 
