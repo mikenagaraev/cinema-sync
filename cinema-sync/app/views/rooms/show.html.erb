@@ -39,6 +39,7 @@
           <ul id="chat">
             <%= render @room.messages.all %>
           </ul>
+          <% if user_signed_in? %>
           <div class="panel-footer">
             <%= form_for [@user, @room, @room.messages.build], remote: true do |f| %>
                 <div class="input-group">
@@ -49,6 +50,7 @@
                 </div>
             <% end %>
           </div>
+          <% end %>
         </div>
 
       </div>
