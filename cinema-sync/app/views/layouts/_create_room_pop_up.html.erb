@@ -2,7 +2,7 @@
 <div id="create-room-pop-up" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for :room, url: user_room_path(current_user), remote: true, class: "form-group" do |f| %>
+      <%= form_for :room, url: user_room_path(current_user), class: "form-group" do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h2>New Room</h2>
@@ -12,6 +12,7 @@
           <%= f.text_field :title, placeholder: "Name...", class: "form-control"%>
         </div>
       </div>
+      <%= f.file_field :image %>
       <div class="modal-footer">
         <%= f.submit "Create", class: "btn btn-primary" %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
