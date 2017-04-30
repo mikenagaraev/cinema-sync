@@ -59,7 +59,7 @@ $room-page-header-height: 10rem;
             height: $video-height / 6;
             border: 0.3rem dashed #ffffff;
             cursor: pointer;
-            transition: background .3s;
+            transition: background 0.3s;
 
             &:hover {
               background: rgba(0,0,0, .55);
@@ -79,28 +79,39 @@ $room-page-header-height: 10rem;
     }
 
     &-options {
+      text-align: center;
       margin-top: 5rem;
       width: 100%;
       height: $options-height;
-      background: rgba(0,0,0,.7);
 
       .option-button {
         display: inline-block;
         position: relative;
         top: 2rem;
         left: 3rem;
-        width: 16rem;
-        height: 4rem;
-        line-height: 4rem;
+        width: 14rem;
+        height: 14rem;
+        border-radius: 50%;
+        line-height: 14rem;
         color: #ffffff;
-        font-size: 2.5rem;
         text-align: center;
         text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+
+        h2 {
+          transform: translateY(-50%);
+          top: 50%;
+          font-size: 3rem;
+          position: relative;
+          margin: 0;
+        }
       }
-      $edit-room-button-color: #01b7ee;
+      $edit-room-button-color: #18b087;
 
       .edit-room-button {
         background: $edit-room-button-color;
+        border: .6rem solid darken($edit-room-button-color,20%);
 
         &:hover {
           background: darken($edit-room-button-color,3%);
@@ -109,8 +120,9 @@ $room-page-header-height: 10rem;
       $delete-room-button-color: #ff0000;
 
       .delete-room-button {
-        margin-left: 2rem;
+        margin-left: 6rem;
         background: $delete-room-button-color;
+        border: .6rem solid darken($delete-room-button-color,20%);
 
         &:hover {
           background: darken($delete-room-button-color,3%);
@@ -194,7 +206,6 @@ $room-page-header-height: 10rem;
 
     &-short {
       display: inline-block;
-
       max-width: 50%;
       min-width: 20%;
     }
@@ -215,6 +226,7 @@ $room-page-header-height: 10rem;
   border: none;
   outline: none;
   min-width: 6rem;
+  padding: 1rem;
   // border: .2rem solid #ffffff;
   background: rgba(0,0,0,.6);
 }

@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @video = @room.video || Video.new
   end
 
   def update

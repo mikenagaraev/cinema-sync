@@ -3,8 +3,6 @@ class VideosController < ApplicationController
   before_action :set_user_room
   before_action :set_video, except: [:new, :create]
 
-  YOUTUBE_VIDEO_REGEX = /(https?):\/\/(www.)?youtube.com\/watch\?v=(.{8,14})/
-
   def new
     @video = Video.new
   end

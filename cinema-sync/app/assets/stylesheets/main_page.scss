@@ -144,7 +144,7 @@ $button-create-size: 8rem;
 
     &-body {
       border: 2px solid $awesome-first-color;
-      height: 40rem;
+      height: 40rem !important;
       height: 100%;
 
       &-title {
@@ -162,6 +162,7 @@ $button-create-size: 8rem;
 
       .img-preview {
         position: relative;
+        height: 34rem;
         overflow: hidden;
 
         img {
