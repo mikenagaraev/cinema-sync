@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @video = @room.video || Video.new
   end
 
   def update
@@ -39,6 +40,6 @@ class RoomsController < ApplicationController
   end
 
   def room_params
-    params.require(:room).permit(:user_id, :title, :video_url, :video_title)
+    params.require(:room).permit(:user_id, :title, :image)
   end
 end

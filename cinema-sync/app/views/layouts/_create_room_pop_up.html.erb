@@ -2,14 +2,34 @@
 <div id="create-room-pop-up" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for :room, url: user_room_path(current_user), remote: true, class: "form-group" do |f| %>
+      <%= form_for :room, url: user_room_path(current_user), class: "form-group" do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h2>New Room</h2>
       </div>
       <div class="modal-body">
         <div class="wrapper-input">
-          <%= f.text_field :title, placeholder: "Name...", class: "form-control"%>
+          <div class="wrapper-input-field-short">
+            <strong>
+              Room name:
+            </strong>
+          </div>
+          <div class="wrapper-input-field-long">
+            <%= f.text_field :title, placeholder: "Name...", class: "form-control"%>
+          </div>
+        </div>
+        <div class="wrapper-input-field-short">
+          <strong>
+            Room picture:
+          </strong>
+        </div>
+        <div class="wrapper-input-field-short">
+
+          <label class="btn btn-default btn-file">
+            Browse
+            <%= f.file_field :image, class: "picture-room form-control", style: "display: none" %>
+            <input type="file" style="display: none;">
+          </label>
         </div>
       </div>
       <div class="modal-footer">

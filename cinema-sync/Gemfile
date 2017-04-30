@@ -51,12 +51,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-if defined?(RUBY_DESCRIPTION) && RUBY_DESCRIPTION.start_with?("ruby 2.4")
-  gem 'openssl'
-end
+# if defined?(RUBY_DESCRIPTION) && RUBY_DESCRIPTION.start_with?("ruby 2.4")
+#   gem 'openssl'
+# end
 
 gem 'devise'
 gem 'private_pub'
 gem 'thin'
+
+gem 'paperclip'
 
 gem 'bootstrap-sass', '~> 3.3.6'
