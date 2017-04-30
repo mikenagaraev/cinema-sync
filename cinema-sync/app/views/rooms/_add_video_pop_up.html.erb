@@ -2,7 +2,7 @@
 <div id="add-video-pop-up" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for :video, url: user_room_video_path(current_user), method: :post, class: "add-video-form" do |f| %>
+      <%= form_for :video, url: user_room_video_path(current_user), class: "add-video-form" do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h2>Add video</h2>

@@ -1,6 +1,9 @@
 <div class="container-fluid room-page">
-  <div class="room-page-header">
-    <h2><%= @room.title %></h2>
+  <div class="room-page-header"  controller="<%= user_room_path(current_user) %>">
+    <h2>
+      <%= @room.title %>
+    </h2>
+    <span class="glyphicon glyphicon-pencil edit-sign"></span>
   </div>
   <div class="room-page-body">
     <div class="col-md-8">
@@ -23,38 +26,16 @@
       <div class="room-page-body-options">
         <% if @room.user == current_user %>
         <div class="admin-options">
-          <%= link_to "Edit", edit_user_room_path(current_user), class: "edit-room-button option-button" %>
+          <div data-toggle="modal" data-target="#add-video-pop-up" class="edit-room-button option-button">
+            Edit
+          </div>
           <%= link_to "Delete", user_room_path(current_user),  method: :delete, class: "delete-room-button option-button" %>
         </div>
         <% end %>
         <div class="user-options"></div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="room-page-body-chat">
-        <div class="room-page-body-chat-header">
-            Chat
-         </div>
-        <div class="room-page-body-chat-body">
-          <ul id="chat">
-            <%= render @room.messages.all %>
-          </ul>
-          <% if current_user %>
-          <div class="panel-footer">
-            <%= form_for [@user, @room, @room.messages.build], remote: true do |f| %>
-                <div class="input-group">
-                  <%= f.text_field :body, class: "form-control" %>
-                  <span class="input-group-btn">
-                        <%= f.submit "Send", class: "btn btn-default" %>
-                      </span>
-                </div>
-            <% end %>
-          </div>
-          <% end %>
-        </div>
-
-      </div>
-    </div>
+    <%= render 'chat' %>
   </div>
 </div>
 

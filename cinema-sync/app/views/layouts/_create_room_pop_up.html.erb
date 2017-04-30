@@ -9,10 +9,29 @@
       </div>
       <div class="modal-body">
         <div class="wrapper-input">
-          <%= f.text_field :title, placeholder: "Name...", class: "form-control"%>
+          <div class="wrapper-input-field-short">
+            <strong>
+              Room name:
+            </strong>
+          </div>
+          <div class="wrapper-input-field-long">
+            <%= f.text_field :title, placeholder: "Name...", class: "form-control"%>
+          </div>
+        </div>
+        <div class="wrapper-input-field-short">
+          <strong>
+            Room picture:
+          </strong>
+        </div>
+        <div class="wrapper-input-field-short">
+
+          <label class="btn btn-default btn-file">
+            Browse
+            <%= f.file_field :image, class: "picture-room form-control", style: "display: none" %>
+            <input type="file" style="display: none;">
+          </label>
         </div>
       </div>
-      <%= f.file_field :image %>
       <div class="modal-footer">
         <%= f.submit "Create", class: "btn btn-primary" %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
