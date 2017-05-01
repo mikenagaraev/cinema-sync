@@ -1,10 +1,10 @@
 <div class="session-container">
  <div class="form-switch-buttons">
-      <button class="signup form-button"><%= link_to "Sign Up", new_user_registration_path, :class => "registration-button" %></button>
-      <button class="login form-button"><%= link_to "Log in", new_user_session_path, :class => "registration-button" %></button>
+      <%= link_to "Sign Up", new_user_registration_path, class: "registration-button sign_up" %>
+      <%= link_to "Sign in", new_user_session_path, class: "registration-button sign_in" %>
  </div>
 
- <div class="form-name">Log In</div>
+ <div class="form-name">Sign In</div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -25,7 +25,7 @@
   <% end -%>   -->
 
   <div class="actions">
-    <%= f.submit "Log In" , :class => 'submit-button' %>
+    <%= f.submit "Sign In" , :class => 'submit-button' %>
   </div>
   <% end %>
 

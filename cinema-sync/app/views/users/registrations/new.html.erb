@@ -1,7 +1,7 @@
 <div class="registration-container">
  <div class="form-switch-buttons">
-      <button class="signup form-button"><%= link_to "Sign Up", new_user_registration_path, :class => "registration-button" %></button>
-      <button class="login form-button"><%= link_to "Log in", new_user_session_path, :class => "registration-button" %></button>
+ <%= link_to "Sign Up", new_user_registration_path, class: "registration-button sign_up" %>
+ <%= link_to "Sign in", new_user_session_path, class: "registration-button sign_in" %>
  </div>
 
 <div class="form-name">Sign Up</div>
@@ -19,7 +19,7 @@
   </div>
 
   <div class="field">
- <!--   <%= f.label :password%> 
+ <!--   <%= f.label :password%>
     <% if @minimum_password_length %>
    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br /> -->
@@ -39,8 +39,6 @@
 <!-- <div class="link">
     <%= render "users/shared/links" %>
  </div> -->
- 
- 
+
+
 </div>
-
-
