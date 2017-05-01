@@ -13,8 +13,6 @@ $(document).on('turbolinks:load', function() {
   function showSubmit() {
     var editOk = $("<span/>").addClass("glyphicon-ok glyphicon edit-ok");
     $(editOk).click(function(e) {
-      console.log($(".room-page-header").attr('controller'))
-      console.log($.trim($(".edit-input").val()))
       throughAJAX({
         room: {
           title: $.trim($(".edit-input").val())
@@ -25,7 +23,6 @@ $(document).on('turbolinks:load', function() {
   }
 
   function reset() {
-    console.log($.trim($(".edit-input").val()))
     var h2 = $("<h2/>")
     $(h2).text($(".edit-input").val());
     $(".room-page-header").prepend(h2);

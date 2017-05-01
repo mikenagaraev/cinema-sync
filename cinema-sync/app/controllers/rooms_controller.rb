@@ -17,6 +17,15 @@ class RoomsController < ApplicationController
 
   def show
     @video = @room.video || Video.new
+    ActionCable.server.broadcast 'videos',
+      time: @video.time,
+      start: @video.start,
+      video_id: @video.link,
+      room_id: @room.id
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @video }
+    # end
   end
 
   def update

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424122115) do
+ActiveRecord::Schema.define(version: 20170501153648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20170424122115) do
     t.string  "link"
     t.string  "title"
     t.integer "room_id"
+    t.integer "time",    default: 0
+    t.boolean "start",   default: false
     t.index ["room_id"], name: "index_videos_on_room_id", using: :btree
   end
 

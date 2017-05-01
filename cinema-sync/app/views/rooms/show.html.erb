@@ -4,7 +4,7 @@
       <%= @room.title %>
     </h2>
     <% if current_user && @room.user.id == current_user.id  %>
-      <span class="glyphicon glyphicon-pencil edit-sign"></span>
+    <span class="glyphicon glyphicon-pencil edit-sign"></span>
     <% end %>
   </div>
   <div class="room-page-body">
@@ -15,13 +15,22 @@
         </div>
         <div class="room-page-body-video-block-video">
           <% if @room.video %>
-          <iframe src="<%= @room.video.link %>" allowfullscreen frameborder="0" width="100%" height="100%"></iframe>
+          <!-- <div id="player-<%=@room.id%>"></div> -->
+          <div id="player"></div>
+
+          <div id="video-room-<%=@room.id%>" controller="<%=user_room_video_path(current_user)%>" isOwner="<%=@room.user.id == current_user.id%>">
+
+          </div>
+
+          <!-- <iframe src="<%= @room.video.link %>" allowfullscreen frameborder="0" width="100%" height="100%" id="player-<%=@room.id%>"></iframe> -->
         <% else %>
+          <% if @room.user == current_user %>
           <div class="add-video-area">
             <div class="add-video-area-target" title="Add video" data-toggle="modal" data-target="#add-video-pop-up">
               <span class="glyphicon glyphicon-plus"></span>
             </div>
           </div>
+          <% end %>
           <% end %>
         </div>
       </div>
