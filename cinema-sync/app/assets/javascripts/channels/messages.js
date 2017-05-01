@@ -18,7 +18,6 @@ function scrollDown(data) {
 
 function scrollDownAll() {
   var contentList = $(".chat");
-  console.log(contentList.length)
   $(contentList).each(function(i, data) {
     var numberOfMessages = $(data).find('.chat-box').length;
     console.log(numberOfMessages)
@@ -37,7 +36,7 @@ function createMessageView(data) {
   var chatBox = $('<div/>').addClass("chat-box");
   var userBox = $('<div/>').addClass("user-box");
   var userName = $('<p/>').addClass("username-field").text(data.user);
-  userBox.append($('<img class="user-img" src="/assets/user.png"/>'))
+  userBox.append($('<img class="user-img" src="/assets/user-198b94f0f4e15f1cd49eb4bf044ada43d79ec06abb99e84e6ccb8071331df22f.png"/>'))
     .append(userName)
   var messageBox = $('<div/>').addClass('message-box')
   var messageField = $('<p/>').addClass('message-field').text(data.message)
