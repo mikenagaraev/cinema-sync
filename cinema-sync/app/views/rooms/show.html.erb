@@ -15,14 +15,12 @@
         </div>
         <div class="room-page-body-video-block-video">
           <% if @room.video %>
-          <!-- <div id="player-<%=@room.id%>"></div> -->
           <div id="player"></div>
 
-          <div id="video-room-<%=@room.id%>" controller="<%=user_room_video_path(current_user)%>" isOwner="<%=@room.user.id == current_user.id%>">
+
+          <div id="video-room-<%=@room.id%>" controller="<%=user_room_video_path(current_user) if current_user%>" isOwner="<%= current_user ? @room.user.id == current_user.id : false %>">
 
           </div>
-
-          <!-- <iframe src="<%= @room.video.link %>" allowfullscreen frameborder="0" width="100%" height="100%" id="player-<%=@room.id%>"></iframe> -->
         <% else %>
           <% if @room.user == current_user %>
           <div class="add-video-area">
