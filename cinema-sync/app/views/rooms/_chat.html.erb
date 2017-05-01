@@ -1,21 +1,21 @@
 <div class="col-md-4">
   <div class="room-page-body-chat">
     <div class="room-page-body-chat-header">
-        Chat
-     </div>
+      Chat
+    </div>
     <div class="room-page-body-chat-body">
-      <ul id="chat">
+      <ul class="chat" data-chatroom="<%= @room.id %>">
         <%= render @room.messages.all %>
       </ul>
       <% if current_user %>
-      <div class="panel-footer">
+      <div class="panel-footer" data-message-room="<%= @room.id %>">
         <%= form_for [@user, @room, @room.messages.build], remote: true do |f| %>
-            <div class="input-group">
-              <%= f.text_field :body, class: "form-control" %>
-              <span class="input-group-btn">
-                    <%= f.submit "Send", class: "btn btn-default" %>
-                  </span>
-            </div>
+        <div class="input-group">
+          <%= f.text_field :body, class: "form-control message-content" %>
+          <span class="input-group-btn">
+            <%= f.submit "Send", class: "btn btn-default" %>
+          </span>
+        </div>
         <% end %>
       </div>
       <% end %>

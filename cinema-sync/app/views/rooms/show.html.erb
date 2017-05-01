@@ -1,9 +1,11 @@
 <div class="container-fluid room-page">
-  <div class="room-page-header" controller="<%= user_room_path(current_user) %>">
+  <div class="room-page-header" controller="<%= user_room_path(current_user) if current_user && @room.user.id == current_user.id %>">
     <h2>
       <%= @room.title %>
     </h2>
-    <span class="glyphicon glyphicon-pencil edit-sign"></span>
+    <% if current_user && @room.user.id == current_user.id  %>
+      <span class="glyphicon glyphicon-pencil edit-sign"></span>
+    <% end %>
   </div>
   <div class="room-page-body">
     <div class="col-md-8">
