@@ -20,7 +20,7 @@
           <%= f.label "Link" %>
         </div>
         <div class="wrapper-input-field-long">
-          <%= f.text_field :link, class: "form-control", placeholder: "https://www.youtube.com/watch?v=abcdefghjkl", required: true %>
+          <%= f.text_field :link, class: "form-control", pattern: "(https?):\/\/(www.)?(youtube.com\/)(watch\?v=|embed\/)(.{8,14})", placeholder: "https://www.youtube.com/watch?v=abcdefghjkl", required: true %>
         </div>
       </div>
       <div class="modal-footer">

@@ -1,7 +1,7 @@
 class Video < ApplicationRecord
   belongs_to :room
 
-  YOUTUBE_VIDEO_REGEX = /(https?):\/\/(www.)?youtube.com\/((watch\?v=|embed)(.{8,14}))/
+  YOUTUBE_VIDEO_REGEX = /(https?):\/\/(www.)?(youtube.com\/)(watch\?v=|embed\/)(.{8,14})/
 
   before_save :create_iframe_link
 
