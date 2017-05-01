@@ -16,3 +16,4 @@
 //= require turbolinks
 //= require private_pub
 //= require_tree .
+//= require_tree ./channels

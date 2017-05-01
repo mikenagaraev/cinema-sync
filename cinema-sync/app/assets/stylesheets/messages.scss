@@ -4,11 +4,13 @@
 
 .username-field  {
 	color: #18b087;
-	max-width: 35px;
 	margin: 0 auto;
-	overflow: hidden;
+  width: 4.6rem;
 	font-family: Maven Pro;
-	margin-top: -5px;
+  position: relative;
+	top: 2px;
+  left: -4px;
+  word-wrap: break-word;
 }
 
 .user-img {
@@ -37,6 +39,3 @@
 	border-radius: 10px;
 	font-family: Maven Pro;
 }
-
-
-
