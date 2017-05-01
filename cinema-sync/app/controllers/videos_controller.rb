@@ -25,7 +25,7 @@ class VideosController < ApplicationController
   private
 
   def videos_params
-    params.require(:video).permit(:title, :link)
+    params.require(:video).permit(:title, :link, :time, :start)
   end
 
   def set_user_room
@@ -34,7 +34,7 @@ class VideosController < ApplicationController
   end
 
   def set_video
-    @video = @room.video
+    @video = @room.video || Video.new
   end
 
 end
