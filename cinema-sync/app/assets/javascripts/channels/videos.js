@@ -1,11 +1,4 @@
 $(document).on('turbolinks:load', function() {
-  var tag = document.createElement('script');
-
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  onYouTubeIframeAPIReady();
 
   var player;
   var VIDEO_ID;
@@ -13,6 +6,39 @@ $(document).on('turbolinks:load', function() {
   var IS_PLAYING;
   var TIME;
   var IS_OWNER;
+  var previousPage;
+  var currentPage;
+
+  currentPage = window.location.href;
+
+  if (localStorage.getItem("prevPage") != currentPage) {
+    localStorage.setItem("prevPage", currentPage);
+    window.location.reload();
+  }
+
+  onYouTubeIframeAPIReady();
+  superUpdate();
+
+  function init() {
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    if (firstScriptTag.src == "https://www.youtube.com/iframe_api") {
+      return;
+    }
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+
+
+  function superUpdate() {
+    if (window.location.href.indexOf("room") > -1) {
+      var interval = 5000;
+      setTimeout(superUpdate, interval);
+      $.get()
+    }
+  }
+
 
   function onYouTubeIframeAPIReady() {
     if (player) {
@@ -29,6 +55,7 @@ $(document).on('turbolinks:load', function() {
         }
       });
     } else {
+      init();
       setTimeout(onYouTubeIframeAPIReady, 100);
     }
   }
@@ -80,18 +107,12 @@ $(document).on('turbolinks:load', function() {
     player.pauseVideo();
   }
 
-  function superUpdate() {
-    $.get()
-  }
-
   App.videos = App.cable.subscriptions.create('VideosChannel', {
     received: function(data) {
       ROOM_ID = data.room_id;
       VIDEO_ID = data.video_id.slice(-11, data.video_id.length)
       TIME = data.time;
       IS_PLAYING = data.start;
-      // var interval = 500;
-      // setInterval(superUpdate, interval);
       checkSyncronization();
     }
   })

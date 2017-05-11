@@ -56,8 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # end
 
 gem 'devise'
-gem 'private_pub'
-gem 'thin'
 
 gem 'cancancan'
 gem 'rails_admin'
