@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function() {
 
   App.messages = App.cable.subscriptions.create('MessagesChannel', {
     received: function(data) {
-      console.log(data)
       var chatBox = createMessageView(data);
       clearInput(data);
       scrollDown(data);

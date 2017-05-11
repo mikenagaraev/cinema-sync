@@ -64,19 +64,24 @@ $(document).on('turbolinks:load', function() {
   }
 
   function checkSyncronization() {
-    console.log(IS_OWNER)
-    if (Math.round(player.getCurrentTime()) + 5 < TIME || Math.round(player.getCurrentTime()) - 5 > TIME) {
-      player.seekTo(TIME);
-    }
-    if (IS_PLAYING) {
-      player.playVideo()
-    } else {
-      player.pauseVideo();
+    if (player) {
+      if (Math.round(player.getCurrentTime()) + 5 < TIME || Math.round(player.getCurrentTime()) - 5 > TIME) {
+        player.seekTo(TIME);
+      }
+      if (IS_PLAYING) {
+        player.playVideo()
+      } else {
+        player.pauseVideo();
+      }
     }
   }
 
   function stopVideo() {
     player.pauseVideo();
+  }
+
+  function superUpdate() {
+    $.get()
   }
 
   App.videos = App.cable.subscriptions.create('VideosChannel', {
@@ -85,6 +90,8 @@ $(document).on('turbolinks:load', function() {
       VIDEO_ID = data.video_id.slice(-11, data.video_id.length)
       TIME = data.time;
       IS_PLAYING = data.start;
+      // var interval = 500;
+      // setInterval(superUpdate, interval);
       checkSyncronization();
     }
   })

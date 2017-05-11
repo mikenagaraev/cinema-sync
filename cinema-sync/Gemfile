@@ -59,6 +59,9 @@ gem 'devise'
 gem 'private_pub'
 gem 'thin'
 
+gem 'cancancan'
+gem 'rails_admin'
+
 gem 'paperclip'
 
 gem 'bootstrap-sass', '~> 3.3.6'
