@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}
 
   root 'home#index'
@@ -8,7 +9,10 @@ Rails.application.routes.draw do
   resources :users do
     resource :room do
       resources :messages
+      resource :video
     end
   end
+
+  mount ActionCable.server => '/cable'
 
 end

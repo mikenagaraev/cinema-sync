@@ -1,4 +1,5 @@
-$chat-header-color: #01b7ee;
+$chat-header-color: #d4fd02;
+$chat-header-text-color: #000000;
 $chat-body-color: #ffffff;
 $chat-header-height: 10rem;
 $room-body-height: 90rem;
@@ -21,6 +22,7 @@ $room-page-header-height: 10rem;
     margin-top: 2rem;
 
     h2 {
+      display: inline-block;
       margin: 0;
     }
   }
@@ -45,7 +47,7 @@ $room-page-header-height: 10rem;
           height: 100%;
           width: 100%;
           border: 0.3rem dashed #ffffff;
-          background: rgba(0,0,0,.7);
+          background: rgba(0,0,0,.5);
           position: relative;
 
           &-target {
@@ -57,6 +59,11 @@ $room-page-header-height: 10rem;
             height: $video-height / 6;
             border: 0.3rem dashed #ffffff;
             cursor: pointer;
+            transition: background 0.3s;
+
+            &:hover {
+              background: rgba(0,0,0, .55);
+            }
 
             span {
               left: 50%;
@@ -72,28 +79,39 @@ $room-page-header-height: 10rem;
     }
 
     &-options {
+      text-align: center;
       margin-top: 5rem;
       width: 100%;
       height: $options-height;
-      background: rgba(0,0,0,.7);
 
       .option-button {
         display: inline-block;
         position: relative;
         top: 2rem;
         left: 3rem;
-        width: 16rem;
-        height: 4rem;
-        line-height: 4rem;
+        width: 14rem;
+        height: 14rem;
+        border-radius: 50%;
+        line-height: 14rem;
         color: #ffffff;
-        font-size: 2.5rem;
         text-align: center;
         text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+
+        h2 {
+          transform: translateY(-50%);
+          top: 50%;
+          font-size: 3rem;
+          position: relative;
+          margin: 0;
+        }
       }
-      $edit-room-button-color: #01b7ee;
+      $edit-room-button-color: #18b087;
 
       .edit-room-button {
         background: $edit-room-button-color;
+        border: .6rem solid darken($edit-room-button-color,20%);
 
         &:hover {
           background: darken($edit-room-button-color,3%);
@@ -102,8 +120,9 @@ $room-page-header-height: 10rem;
       $delete-room-button-color: #ff0000;
 
       .delete-room-button {
-        margin-left: 2rem;
+        margin-left: 6rem;
         background: $delete-room-button-color;
+        border: .6rem solid darken($delete-room-button-color,20%);
 
         &:hover {
           background: darken($delete-room-button-color,3%);
@@ -123,9 +142,10 @@ $room-page-header-height: 10rem;
         font-size: 2em;
         font-family: Maven Pro;
         background: $chat-header-color;
+        font-weight: bold;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
-        color: #ffffff;
+        color: $chat-header-text-color;
         border-bottom: 2px solid #000;
 
         h2 {
@@ -144,7 +164,7 @@ $room-page-header-height: 10rem;
     }
   }
 
-  #chat {
+  .chat {
     padding-left: 15px;
     padding-right: 15px;
     height: 750px;
@@ -155,7 +175,7 @@ $room-page-header-height: 10rem;
 .edit-room {
   background: rgba(0,0,0,.6);
   padding: 3rem !important;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   margin-top: 4rem;
 
   &-form-button {
@@ -170,4 +190,47 @@ $room-page-header-height: 10rem;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+}
+
+.picture-room {}
+
+.wrapper-input {
+  margin-bottom: 1rem;
+
+  &-field {
+    &-long {
+      display: inline-block;
+      max-width: 100%;
+      min-width: 70%;
+    }
+
+    &-short {
+      display: inline-block;
+      max-width: 50%;
+      min-width: 20%;
+    }
+  }
+}
+
+.edit-sign {
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.edit-ok {
+  cursor: pointer;
+  color: #00ff00;
+}
+
+.edit-input {
+  border: none;
+  outline: none;
+  min-width: 6rem;
+  padding: 1rem;
+  // border: .2rem solid #ffffff;
+  background: rgba(0,0,0,.6);
+}
+
+.edit-form-hidden {
+  display: none;
 }

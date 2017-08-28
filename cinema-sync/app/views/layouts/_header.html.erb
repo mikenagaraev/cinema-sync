@@ -17,9 +17,6 @@
       <li class="site-navigation-list-item">
         <%= link_to "Sign in", new_user_session_path, class: "site-navigation-text"%>
       </li>
-      <li class="site-navigation-list-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "site-navigation-text" %>
-      </li>
     <% else %>
       <li class="site-navigation-list-item">
         <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "site-navigation-text" %>

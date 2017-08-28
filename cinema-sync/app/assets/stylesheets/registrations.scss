@@ -3,85 +3,84 @@ $registration-button-nonactive: #848d96;
 $registration-background: #848d96;
 
 .registration-container {
-	max-width: 400px;
-	margin: 30px auto auto;
-	border-radius: 15px;
-	background-color: rgba(36, 48, 60, 0.7);
-	padding-top: 10px;
-	padding-left: 15px;
-}
-
-.form-button {
-	min-width: 180px;
-	height: 40px;
-	background-color: #848d96;
-	border: none;
-	float: left;
-	color: #fff;
+  max-width: 400px;
+  margin: 30px auto auto;
+  border-radius: 15px;
+  background-color: rgba(36, 48, 60, 0.7);
+  padding-top: 10px;
+  padding-left: 15px;
 }
 
 .form-switch-buttons {
-	margin-top: 10px;
-	margin-left: 5px;
-	overflow: hidden;
-	color: #fff;
-	font-family: Maven Pro;
-	font-size: 18px;
+  margin-top: 10px;
+  margin-left: 5px;
+  overflow: hidden;
+  color: #fff;
+  font-family: Maven Pro;
+  font-size: 1.8rem;
 }
 
 .registration-button {
-	color: #fff;
-	text-decoration: none;
+  min-width: 18rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2.4rem;
+  text-align: center;
+  background-color: #848d96;
+  border: none;
+  float: left;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $registration-button-acrive;
+    color: #fff;
+  }
 }
 
-.form-button:hover{
-	text-decoration: none;
-	background-color: #18b087;
-}
-
-.registration-button:hover{
-	text-decoration: none;
-	color: #fff;
+.active-registration-button {
+  background-color: $registration-button-acrive;
 }
 
 .form-name {
-	font-size: 28px;
-	font-family: Maven Pro;
-	font-weight: normal;
-	color: #FFF;
-	text-align: center;
-	margin: 20px 0;
+  font-size: 28px;
+  font-family: Maven Pro;
+  font-weight: normal;
+  color: #FFF;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .field {
-	color: #848d96;
-	width: 200px;
-	margin: 20px 5px;
-	
-}  
+  color: #848d96;
+  width: 200px;
+  margin: 20px 5px;
+}
 
-.field input{
-	background-color: #24303c;
-	border: 1px solid #848d96;
-	height: 40px;
-	padding: 5px 10px;
-	width: 360px;
+.field input {
+  background-color: #24303c;
+  border: 1px solid #848d96;
+  height: 40px;
+  padding: 5px 10px;
+  width: 360px;
+  font-size: 1.8rem;
+  font-weight: normal;
 }
 
 .submit-button {
-	background-color: #18b087;
-	width: 360px;
-	height: 60px;
-	border: none;
-	margin-top: 10px;
-	margin-left: 5px;
-	font-size: 23px;
-	color: #fff;
-	margin: 15px 5px;
-	font-family: Maven Pro;
+  background-color: $registration-button-acrive;
+  width: 360px;
+  height: 60px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 23px;
+  color: #fff;
+  margin: 15px 5px;
+  font-family: Maven Pro;
 }
 
 .submit-button:hover {
-	background-color: #18b068;
+  background-color: darken($registration-button-acrive, 10%);
 }
-

@@ -10,3 +10,5 @@
 #10.times do |x|
 #  Room.create(title: "room #{x}", user_id: 1)
 #end
+
+User.create(id: 1, username: 'admin', email: 'admin@gmail.com', password: 'admin123456', password_confirmation: 'admin123456', role: 'admin');

@@ -2,21 +2,29 @@
 <div id="add-video-pop-up" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for @room, url: { action: :update }, method: :put, remote: true, class: "add-video-form" do |f| %>
+      <%= form_for @video, url: user_room_video_path(current_user), class: "add-video-form" do |f| %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h2>Add video</h2>
       </div>
       <div class="modal-body">
         <div class="wrapper-input">
-          <%= f.label "Name" %>
-          <%= f.text_field :video_title, class: "form-control" %>
+          <div class="wrapper-input-field-short">
+            <%= f.label "Name" %>
+          </div>
+          <div class="wrapper-input-field-long">
+            <%= f.text_field :title, class: "form-control", required: true %>
+          </div>
+        </div>
+        <div class="wrapper-input-field-short ">
           <%= f.label "Link" %>
-          <%= f.text_field :video_url, class: "form-control", placeholder: "https://www.youtube.com/watch?v=abcdefghjkl", required: true, pattern: "(https?)://(www.)?youtube.com/watch[?]v=(.{8,14})" %>
+        </div>
+        <div class="wrapper-input-field-long">
+          <%= f.text_field :link, class: "form-control", pattern: "(https?):\/\/(www.)?(youtube.com\/)(watch\?v=|embed\/)(.{8,14})", placeholder: "https://www.youtube.com/watch?v=abcdefghjkl", required: true %>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="add-video-button">Add</button>
+        <button type="submit" class="btn btn-primary" id="add-video-button">Save</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
       <% end %>

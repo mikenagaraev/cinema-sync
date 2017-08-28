@@ -9,7 +9,13 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     @message.room = @room
-    @message.save
+    if @message.save
+      ActionCable.server.broadcast 'messages',
+        message: @message.body,
+        user: @message.user.username,
+        chatroom_id: @room.id
+      head :ok
+    end
   end
 
   private

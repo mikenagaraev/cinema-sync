@@ -2,7 +2,11 @@
   <div class="rooms-container-item-body">
     <a href="<%= user_room_path(room.user_id) %>">
       <div class="img-preview">
-        <%= image_tag 'default-item.png', class: 'img-responsive' %>
+        <% if room.image.present? %>
+          <%= image_tag room.image.url, class: 'img-responsive' %>
+        <% else %>
+          <%= image_tag 'default-item.png', class: 'img-responsive' %>
+        <% end %>
         <div class="triangle-preview"></div>
       </div>
     </a>
